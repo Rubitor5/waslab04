@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Tweets</h1>
-
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <%= render tweet %>
+    <%= button_to 'Like this tweet', like_tweet_path(tweet), method: :put %>
     <p>
-      <%= link_to "Show this tweet", tweet %>
+    <%= link_to "Show this tweet", tweet %>
       <hr>
     </p>
   <% end %>
