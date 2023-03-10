@@ -1,8 +1,10 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
-  # PUT 
+  before_action :set_tweet, only: %i[ show edit update destroy like]
+  
+  
+  
   def like 
-    @tweet.likes += 1
+    @tweet.likes = @tweet.likes + 1
     @tweet.save
     redirect_to root_path
   end
