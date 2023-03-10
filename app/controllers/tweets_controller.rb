@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   
   
   def like 
-    @tweet.likes = @tweet.likes + 1
+    @tweet.likes += 1
     @tweet.save
     redirect_to root_path
   end
